@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "D:/Downloads/Memcache"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Docker"
+	}
+}
