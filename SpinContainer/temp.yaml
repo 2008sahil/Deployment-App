@@ -1,0 +1,27 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: new2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+        - image: vercelclone.azurecr.io/vercelimg
+          name: vercelclone
+          env:
+            - name: GIT_REPOSITORY__URL
+              value: https://github.com/2008sahil/react-app.git
+            - name: PROJECT_ID
+              value: sahil
+          ports:
+            - containerPort: 80
