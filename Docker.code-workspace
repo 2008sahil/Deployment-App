@@ -4,10 +4,8 @@
 			"path": ".."
 		},
 		{
-			"path": "D:/Downloads/Memcache"
+			"path": "D:/Downloads/Downloads/Chat_App/newapp/new-app"
 		}
 	],
-	"settings": {
-		"liveServer.settings.multiRootWorkspaceName": "Docker"
-	}
+	"settings": {}
 }

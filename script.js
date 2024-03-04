@@ -7,7 +7,8 @@ const mime = require('mime-types');
 
 const connectionString = 'DefaultEndpointsProtocol=https;AccountName=buildvercel;AccountKey=Rs17/Oknn0hbf8R4+AmSknLqRBoC91bBnyNDxj6R7ZnkB2bwX7w5CxMib50mMAibbtnFtl6ATb2n+ASt/tHHlw==;EndpointSuffix=core.windows.net'; // Replace with your Azure Blob Storage connection string
 const containerName = 'app-builds'; // Replace with your Azure Blob Storage container name
-const PROJECT_ID ='sahil';
+// const PROJECT_ID ='sahil';
+const PROJECT_ID = process.env.PROJECT_ID
 
 const blobServiceClient = BlobServiceClient.fromConnectionString(connectionString);
 const containerClient = blobServiceClient.getContainerClient(containerName);

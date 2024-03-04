@@ -1,6 +1,7 @@
 #!/bin/bash
 
+export PROJECT_ID="$GIT_REPOSITORY__URL"
 
-git clone https://github.com/2008sahil/react-app.git /home/app/output
+git clone  "$GIT_REPOSITORY__URL" /home/app/output
 
 exec node script.js
