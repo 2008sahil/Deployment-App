@@ -4,8 +4,22 @@ const fs = require('fs');
 
 const app = express();
 const PORT = 3000;
+const { Server } = require("socket.io");
+const Redis = require('ioredis')
 
 app.use(express.json());
+
+const subscriber = new Redis("rediss://default:AVNS_edhWdX1DQ5AqBUTmw59@redis-11685dad-vercelclone.a.aivencloud.com:25620")
+
+// const io = new Server({ cors: '*' })
+
+// io.on('connection', socket => {
+//   socket.on('subscribe', channel => {
+//       socket.join(channel)
+//       socket.emit('message', `Joined ${channel}`)
+//   })
+// })
+
 
 app.post('/create-pod', (req, res) => {
     // Extract variables from the POST request payload
@@ -60,6 +74,21 @@ spec:
         res.status(200).send('Pod created successfully');
     });
 });
+
+
+// async function initRedisSubscribe() {
+//   console.log('Subscribed to logs....')
+//   subscriber.psubscribe('logs:*')
+//   subscriber.on('pmessage', (pattern, channel, message) => {
+//       io.to(channel).emit('message', message)
+//   })
+// }
+
+
+// initRedisSubscribe()
+
+
+// io.listen(9002, () => console.log('Socket Server 9002'))
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);

@@ -22,6 +22,6 @@ spec:
             - name: GIT_REPOSITORY__URL
               value: https://github.com/2008sahil/react-app.git
             - name: PROJECT_ID
-              value: sahil
+              value: zahil
           ports:
             - containerPort: 80
