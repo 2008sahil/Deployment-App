@@ -11,18 +11,7 @@ const Redis = require("ioredis");
 const redisUri = "redis://default:AVNS_kh_5YK7aZgwHEwlMqFX@redis-1f810bc2-vercelclone.a.aivencloud.com:25619"
 const subscriber = new Redis(redisUri);
 
-// testing 
 
-// const redisUri = "rediss://default:AVNS_edhWdX1DQ5AqBUTmw59@redis-11685dad-vercelclone.a.aivencloud.com:25620"
-
-// const subscriber = new Redis(redisUri)
-
-// const io=new Server({cors:"*"})
-
-
-app.get('/',(req,res)=>{
-  res.send("hii")
-})
 
 app.post('/create-pod', (req, res) => {
     // Extract variables from the POST request payload
