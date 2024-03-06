@@ -4,22 +4,25 @@ const fs = require('fs');
 
 const app = express();
 const PORT = 3000;
-const { Server } = require("socket.io");
-const Redis = require('ioredis')
+// const {Server}=require("socket.io")
 
 app.use(express.json());
+const Redis = require("ioredis");
+const redisUri = "redis://default:AVNS_kh_5YK7aZgwHEwlMqFX@redis-1f810bc2-vercelclone.a.aivencloud.com:25619"
+const subscriber = new Redis(redisUri);
 
-const subscriber = new Redis("rediss://default:AVNS_edhWdX1DQ5AqBUTmw59@redis-11685dad-vercelclone.a.aivencloud.com:25620")
+// testing 
 
-// const io = new Server({ cors: '*' })
+// const redisUri = "rediss://default:AVNS_edhWdX1DQ5AqBUTmw59@redis-11685dad-vercelclone.a.aivencloud.com:25620"
 
-// io.on('connection', socket => {
-//   socket.on('subscribe', channel => {
-//       socket.join(channel)
-//       socket.emit('message', `Joined ${channel}`)
-//   })
-// })
+// const subscriber = new Redis(redisUri)
 
+// const io=new Server({cors:"*"})
+
+
+app.get('/',(req,res)=>{
+  res.send("hii")
+})
 
 app.post('/create-pod', (req, res) => {
     // Extract variables from the POST request payload
@@ -76,20 +79,35 @@ spec:
 });
 
 
-// async function initRedisSubscribe() {
-//   console.log('Subscribed to logs....')
-//   subscriber.psubscribe('logs:*')
-//   subscriber.on('pmessage', (pattern, channel, message) => {
-//       io.to(channel).emit('message', message)
-//   })
-// }
+async function initRedisSubscribe() {
+  console.log('Subscribed to logs....')
+  subscriber.psubscribe('logs:*')
+  subscriber.on('pmessage', (pattern, channel, message) => {
+    console.log(message,channel)
+      io.to(channel).emit('message', message)
+  })
+}
 
 
-// initRedisSubscribe()
+initRedisSubscribe()
 
-
-// io.listen(9002, () => console.log('Socket Server 9002'))
-
-app.listen(PORT, () => {
+const server=app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
+
+// io.listen(9002, () => console.log('Socket Server 9002'))
+const io = require("socket.io")(server, {
+  pingTimeout: 60000,
+  cors: {
+    origin: "*",
+  },
+});
+
+io.on('connection', socket => {
+  console.log("connected to socket")
+  socket.on('subscribe', channel => {
+    console.log(channel)
+      socket.join(channel)
+      socket.emit('message', `Joined ${channel}`)
+  })
+})

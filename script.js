@@ -7,7 +7,7 @@ const Redis = require('ioredis')
 
 
 
-const publisher = new Redis('rediss://CLICK_TO:REVEAL_PASSWORD@redis-11685dad-vercelclone.a.aivencloud.com:25620')
+const publisher = new Redis('redis://default:AVNS_kh_5YK7aZgwHEwlMqFX@redis-1f810bc2-vercelclone.a.aivencloud.com:25619')
 
 const connectionString = 'DefaultEndpointsProtocol=https;AccountName=buildvercel;AccountKey=Rs17/Oknn0hbf8R4+AmSknLqRBoC91bBnyNDxj6R7ZnkB2bwX7w5CxMib50mMAibbtnFtl6ATb2n+ASt/tHHlw==;EndpointSuffix=core.windows.net'; // Replace with your Azure Blob Storage connection string
 const containerName = 'app-builds'; // Replace with your Azure Blob Storage container name
@@ -72,7 +72,7 @@ async function init() {
         }
 
         publishLog(`Done`);
-        console.log('Done...');
+        console.log(' new file Done...');
     });
 }
 
