@@ -13,10 +13,11 @@ const connectionString = 'DefaultEndpointsProtocol=https;AccountName=buildvercel
 const containerName = 'app-builds'; // Replace with your Azure Blob Storage container name
 
 const PROJECT_ID = process.env.PROJECT_ID
+const DeploymentId = process.env.DeploymentId
 
 
 function publishLog(log) {
-    publisher.publish(`logs:${PROJECT_ID}`, JSON.stringify({ log }))
+    publisher.publish(`logs:${DeploymentId}`, JSON.stringify({ log }))
 }
 
 const blobServiceClient = BlobServiceClient.fromConnectionString(connectionString);
@@ -73,6 +74,7 @@ async function init() {
 
         publishLog(`Done`);
         console.log(' new file Done...');
+        process.exit(0);
     });
 }
 
