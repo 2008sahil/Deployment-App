@@ -53,7 +53,7 @@ router.get('/userdata', async (req,res)=>{
     })
 
 })
-router.get('/getuserrepo', async (req,res)=>{
+router.post('/getuserrepo', async (req,res)=>{
     console.log(req.headers.authorization)
     await fetch(`https://api.github.com/users/${req.body.username}/repos`,{
         method:"GET",

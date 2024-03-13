@@ -23,8 +23,6 @@ app.use('/user',RegisterUser)
 
 
 
-
-
 async function initRedisSubscribe() {
   console.log('Subscribed to logs....')
   subscriber.psubscribe('logs:*')
@@ -39,6 +37,7 @@ initRedisSubscribe()
 const server=app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
+
 
 // io.listen(9002, () => console.log('Socket Server 9002'))
 const io = require("socket.io")(server, {
