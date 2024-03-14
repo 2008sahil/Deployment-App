@@ -2,6 +2,7 @@ const express=require("express")
 const router = express.Router();
 const User =require("../models/Userschema")
 const Project=require("../models/ProjectSchema")
+const deployment=require("../models/DeploymentSchema")
 
 const Client_ID="1358438808b90040cd6f";
 const Client_Secret="0645acc3480c79f5e2c577e17044a93a4c137c08";
@@ -79,6 +80,16 @@ router.post('/createproject',async(req,res)=>{
     // console.log(project)
     res.send(project);
 })
+
+router.get('/getProject',async(req,res)=>{
+    const Projectarray=await Project.find({userId:req.headers.authorization})
+    res.send(Projectarray);
+})
+router.get('/getDeployments',async(req,res)=>{
+    const Deploymentarray=await deployment.find({projectId:req.headers.authorization})
+    res.send(Deploymentarray);
+})
+
 
 
 

@@ -7,6 +7,7 @@ const app = express();
 const PORT = 4000;
 const createproject=require('./Request/SpinContanier')
 const RegisterUser=require('./Request/RegisterUser')
+const deployment=require('./models/DeploymentSchema')
 
 dotenv.config();
 app.use(express.json());
@@ -26,8 +27,10 @@ app.use('/user',RegisterUser)
 async function initRedisSubscribe() {
   console.log('Subscribed to logs....')
   subscriber.psubscribe('logs:*')
-  subscriber.on('pmessage', (pattern, channel, message) => {
+  subscriber.on('pmessage', async (pattern, channel, message) => {
       io.to(channel).emit('message', message)
+      // const deployment = await Deployment.findById(channel);
+      console.log(channel)
   })
 }
 
