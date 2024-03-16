@@ -86,8 +86,12 @@ router.get('/getProject',async(req,res)=>{
     res.send(Projectarray);
 })
 router.get('/getDeployments',async(req,res)=>{
-    const Deploymentarray=await deployment.find({projectId:req.headers.authorization})
+    const Deploymentarray=await deployment.find({projectId:req.headers.authorization}).sort({ createdAt: -1 })
     res.send(Deploymentarray);
+})
+router.get('/getDeployment',async(req,res)=>{
+    const Deployment=await deployment.find({_id:req.headers.authorization}).populate("projectId")
+    res.send(Deployment);
 })
 
 

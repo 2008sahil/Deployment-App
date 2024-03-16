@@ -23,7 +23,7 @@ spec:
               value: https://github.com/2008sahil/Amazon_clone.git
             - name: PROJECT_ID
               value: comeonbaby
-            -name:DeploymentId
-              valueL:65ecada2651857480ea8e481
+            - name: DeploymentId
+              value: 65f34d568c0ab2ec666e1788
           ports:
             - containerPort: 80

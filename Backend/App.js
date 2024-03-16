@@ -23,17 +23,20 @@ app.use('/Project',createproject)
 app.use('/user',RegisterUser)
 
 
-
 async function initRedisSubscribe() {
   console.log('Subscribed to logs....')
   subscriber.psubscribe('logs:*')
   subscriber.on('pmessage', async (pattern, channel, message) => {
       io.to(channel).emit('message', message)
-      // const deployment = await Deployment.findById(channel);
+      const parts = channel.split(":");
+      const id = parts[1];
+      const Deployment = await deployment.findById(id);
+      // JSON.stringify(message)
+      Deployment.logs.push(message.log);
+      await Deployment.save();
       console.log(channel)
   })
 }
-
 
 initRedisSubscribe()
 

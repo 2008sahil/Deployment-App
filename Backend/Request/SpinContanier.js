@@ -4,6 +4,7 @@ const { exec } = require('child_process');
 const fs = require('fs');
 const deployment=require("../models/DeploymentSchema")
 router.post('/create-deployemnt',async (req, res) => {
+  console.log("request aai")
     const Deployment=await deployment.create({
         projectId:req.body.projectId,
         status:"Queued",
@@ -11,7 +12,8 @@ router.post('/create-deployemnt',async (req, res) => {
     const deploy=await Deployment.populate("projectId")
     const variable1=deploy.projectId.repositoryUrl;
     const variable2=deploy.projectId.ProjectId;
-    const variable3=Deployment._id;
+    const variable3=(Deployment._id);
+    console.log(variable1,variable2,variable3)
 
     // console.log(project)
     // res.send(project);
@@ -43,15 +45,14 @@ spec:
               value: ${variable1}
             - name: PROJECT_ID
               value: ${variable2}
-            -name:DeploymentId
-              valueL:${variable3}
+            - name: DeploymentId
+              value: ${variable3}
           ports:
             - containerPort: 80
 `;
 
     // Write the YAML content to the temp.yaml file
     fs.writeFileSync('temp.yaml', yamlTemplate);
-
     // Execute kubectl apply command to create the pod in AKS
     exec(`kubectl apply -f temp.yaml`, async (error, stdout, stderr) => {
         if (error) {
