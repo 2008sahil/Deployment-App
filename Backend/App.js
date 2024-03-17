@@ -31,12 +31,15 @@ async function initRedisSubscribe() {
       const parts = channel.split(":");
       const id = parts[1];
       const Deployment = await deployment.findById(id);
-      // JSON.stringify(message)
-      Deployment.logs.push(message.log);
+      const actualmessage=JSON.parse(message)
+      Deployment.logs.push(actualmessage.log);
       await Deployment.save();
-      console.log(channel)
+      console.log(channel,message)
   })
 }
+
+
+
 
 initRedisSubscribe()
 

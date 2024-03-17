@@ -20,10 +20,10 @@ spec:
           name: vercelclone
           env:
             - name: GIT_REPOSITORY__URL
-              value: https://github.com/2008sahil/Amazon_clone.git
+              value: https://github.com/2008sahil/react-app.git
             - name: PROJECT_ID
-              value: comeonbaby
+              value: phirese
             - name: DeploymentId
-              value: 65f34d568c0ab2ec666e1788
+              value: 65f6952b750e26afd5bd07a5
           ports:
             - containerPort: 80
