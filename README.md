@@ -19,11 +19,11 @@ Welcome to Vercel-Like Deployment App ! This is a web application built using th
 - **Deployment**: Docker, Kubernetes
 - **Real-time Communication**: Socket.IO
 - **Authentication**: GitHub OAuth
-- **Cloud Services**: Microsoft Azure (if applicable)
+- **Cloud Services**: Microsoft Azure 
 
 ## Installation
 
-1. Clone the repository: `git clone [repository URL]`
+1. Clone the repository: `git clone (https://github.com/2008sahil/vercel_clone.git)`
 2. Navigate to the project directory: `cd vercel`
 3. Install dependencies: `npm install`
 4. Set up environment variables .
