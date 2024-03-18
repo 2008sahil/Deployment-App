@@ -1,6 +1,6 @@
 # Vercel-like Deployment App
 
-Welcome to [Your App Name]! This is a web application built using the MERN stack that allows users to deploy their projects similar to Vercel. Users can add their public repositories and create projects effortlessly through the user-friendly interface.
+Welcome to Vercel-Like Deployment App ! This is a web application built using the MERN stack that allows users to deploy their projects similar to Vercel. Users can add their public repositories and create projects effortlessly through the user-friendly interface.
 
 ## Features
 
@@ -24,9 +24,9 @@ Welcome to [Your App Name]! This is a web application built using the MERN stack
 ## Installation
 
 1. Clone the repository: `git clone [repository URL]`
-2. Navigate to the project directory: `cd [project directory]`
+2. Navigate to the project directory: `cd vercel`
 3. Install dependencies: `npm install`
-4. Set up environment variables (if necessary).
+4. Set up environment variables .
 5. Start the development server: `npm start`
 
 ## Usage
@@ -45,12 +45,4 @@ Contributions are welcome! If you'd like to contribute to the project, please fo
 3. Make your changes and commit them: `git commit -am 'Add some feature'`
 4. Push to the branch: `git push origin feature/your-feature-name`
 5. Submit a pull request.
-
-## License
-
-[Your License Name] (e.g., MIT License)
-
-## Contact
-
-For any inquiries or feedback, feel free to contact [Your Name] at [Your Email Address].
 
