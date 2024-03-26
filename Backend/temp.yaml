@@ -22,8 +22,8 @@ spec:
             - name: GIT_REPOSITORY__URL
               value: https://github.com/2008sahil/react-app.git
             - name: PROJECT_ID
-              value: phirese
+              value: test5
             - name: DeploymentId
-              value: 65f6952b750e26afd5bd07a5
+              value: 65f9db9a244b955d6efbb3ac
           ports:
             - containerPort: 80

@@ -29,6 +29,7 @@ router.get('/getAccessToken',async (req,res)=>{
 
 router.get('/userdata', async (req,res)=>{
     // console.log(req.headers.authorization)
+    
     await fetch("https://api.github.com/user",{
         method:"GET",
         headers:{
@@ -37,7 +38,6 @@ router.get('/userdata', async (req,res)=>{
     }).then((response)=>{
         return response.json();
     }).then(async (userData)=>{
-        // console.log("user is ",userData)
         const user = await User.findOneAndUpdate(
             { username: userData.login },
             {
@@ -64,6 +64,7 @@ router.post('/getuserrepo', async (req,res)=>{
     }).then((response)=>{
         return response.json();
     }).then((data)=>{
+        // console.log(data)
         const originalRepos = data.filter(repo => !repo.fork);
         res.send(originalRepos.map(repo => ({ name: repo.name, url: repo.clone_url })))
     })
@@ -73,6 +74,7 @@ router.post('/createproject',async(req,res)=>{
     const project=await Project.create({
         userId:req.body.userId,
         name:req.body.projectname,
+        reponame:req.body.reponame,
         description:req.body.description,
         repositoryUrl:req.body.repositoryUrl,
         ProjectId:req.body.ProjectId
