@@ -1,0 +1,24 @@
+.ProjectHead{
+    display: flex;
+    gap: 10px;
+}
+.userProfile img{
+    width: 20px;
+    
+}
+.userProfile{
+    border: 2px solid rgb(226, 224, 224);
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 10px;
+    width: 17vw;
+    border-radius: 10px;
+    gap: 5px;
+    
+}
+.userRepos{
+    margin-top: 10px;
+    height: 300px;
+    overflow-y: auto;
+}

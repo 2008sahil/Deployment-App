@@ -1,0 +1,116 @@
+.Home{
+    position: absolute;
+    margin-top: 50px;
+    width: 100%;
+}
+.title{
+    text-align: left;
+    padding-left:5%;
+    border-bottom: 0.5px solid #b1b1b1;
+    height: 250px;
+    
+}
+.Button img{
+    height: 25px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 2px;
+}
+.Buttons{
+    width: 60%;
+    align-self: center;
+    margin: auto;
+    margin-top: 50px;
+
+}
+.Button{
+    display: flex;
+    padding: 10px;
+    gap: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    color: aliceblue;
+    border-radius: 10px;
+    
+}
+.Button:hover,.Card1 h4:hover{
+    cursor: pointer;
+    opacity: 0.8;
+}
+.Head h1{
+    margin: 0px;
+    font-size: 3rem;
+}
+.tagline{
+    color: rgb(158 162 165);
+}
+.Cards{
+    position: relative;
+    top: -10vw;
+    display: flex;
+    justify-content: center;
+    
+
+}
+.Card1{
+    border: 0.5px solid rgb(214, 207, 207);
+    margin: 2rem;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: white;
+}
+.Card1 h1{
+    position: relative;
+    text-align: left;
+    font-size: 1.5rem;
+    
+}
+.Card1 h4{
+    position: relative;
+    text-align: left;
+    font-weight: 500;
+    
+}
+.Cover{
+    border: 2px solid #dbd9d9;
+    border-radius: 10px;
+    height: 330px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    background-color: rgb(249 249 249);
+    
+
+}
+.Card2{
+    align-items: left;
+    margin: 2rem;
+}
+.template img{
+    width: 210px;
+}
+.template{
+    margin: 10px;
+    border-radius: 5px;
+    padding: 5px;
+    border: 2px solid #f3eeee;
+}
+.template img:hover{
+    opacity: 0.5;
+
+}
+
+.TemplateR1{
+    display: flex;
+
+}
+.Button2{
+    background-color: violet;
+}
+.Button3{
+    background-color: #6ecd;
+}

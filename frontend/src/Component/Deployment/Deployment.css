@@ -1,0 +1,22 @@
+
+.TOP{
+    margin: 30px;
+
+}
+.Tagline{
+    display: flex;
+    align-items: center;
+}
+.Tagline div{
+    display: flex;
+    align-items: center;
+}
+.Dull{
+    color: rgb(88, 88, 90);
+}
+.highlight{
+    font-weight: 600;
+}
+.AllDeployments{
+    margin: 50px;
+}
