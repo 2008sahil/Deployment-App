@@ -1,0 +1,36 @@
+.DeploymentCard{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(158, 156, 156);
+}
+.DeploymentCard:hover{
+    cursor: pointer;
+}
+.Second{
+    display: flex;
+    gap: 100px;
+}
+.Status{
+    color: rgb(107, 108, 110);
+}
+.Bottom{
+    display: flex;
+    gap: 4px
+}
+.commit{
+    font-weight: 600;
+}
+.branch{
+    display: flex;
+    align-items: center;
+}
+.Third{
+    display: flex;
+    align-items: center;
+}
+.avatar{
+    width: 30px;
+}

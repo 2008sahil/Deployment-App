@@ -1,0 +1,37 @@
+.ProjectCard{
+    width: 25%;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid rgb(151, 149, 149);
+    /* margin: auto; */
+    
+}
+.ProjectCard:hover{
+    cursor: pointer;
+    
+}
+.link{
+    font-size: 13px;
+    color: rgb(132, 134, 134);
+}
+.Top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.ProjectName{
+    display: flex;
+    align-items: center;
+}
+.icon{
+    width: 20px;
+}
+.Middle{
+    display: flex;
+    padding-left: 10%;
+    margin-top: 20px;
+}
+.Last{
+    margin-top: 10px;
+}

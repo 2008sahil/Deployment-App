@@ -1,0 +1,75 @@
+.Navbar{
+    display: flex;
+    border-bottom: 1px solid rgb(207, 204, 204);
+    justify-content: space-between;
+    padding: 7px 10px 7px 15px; /* top right bottom left */
+    align-items: center;
+    z-index: 5;
+
+}
+.left{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+.username{
+    font-weight: 400;
+
+}
+.slash{
+    opacity: 0.1;
+}
+.left img{
+    height: 25px;
+}
+.right{
+    display: flex;
+}
+.right div{
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 5px;
+    border-radius: 10px;
+    /* width: 20px; */
+}
+.Avatar img{
+    width: 40px;
+}
+.hobby{
+    /* border: 2px solid red; */
+    align-self: center;
+    padding: 2px 5px 2px 5px; /* top right bottom left */;
+    border-radius: 10px;
+    font-size: 12px;
+    background-color: rgb(173, 173, 173);
+}
+.Avatar{
+    height: 30px;
+    align-self: center;
+}
+.bellicon img{
+    height: 20px;
+    padding: 2px;
+    border-radius: 10px;
+    border: 0.5px solid rgb(223, 221, 221);
+}
+.bellicon img:hover ,.feedback:hover{
+    background-color: rgb(238, 237, 237);
+}
+.Signup{
+    background-color: black;
+    color: white;
+}
+.Login,.feedback{
+    border: 1px solid rgb(223, 221, 221);
+}
+.right div:hover,.hobby:hover{
+    cursor: pointer;
+}
+.Signup:hover{
+    background-color: rgb(58, 56, 56);
+}
+.Login:hover{
+    background-color: rgb(238, 231, 231);
+}

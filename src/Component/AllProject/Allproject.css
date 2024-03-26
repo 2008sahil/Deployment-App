@@ -1,0 +1,33 @@
+.navigation{
+    display: flex;
+    padding: 2px;
+    gap: 10px;
+    align-items: center;
+    /* border: 2px solid red; */
+}
+.navigation div{
+    /* border: 2px solid red; */
+    padding: 4px;
+    color: rgb(138, 136, 136);
+}
+.hover:hover{
+    background-color: aliceblue;
+    cursor: pointer;
+}
+.AllProject{
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 5px;
+}
+.UserProject{
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 50px;
+    /* background-color: #dbdbdb; */
+    /* border: 2px solid green; */
+    /* height: 600px; */
+    /* display: grid;
+    justify-content: center; */
+     
+}
