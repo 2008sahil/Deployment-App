@@ -10,9 +10,6 @@ import { Allproject } from './Component/AllProject/Allproject.js';
 import { Deployment } from './Component/Deployment/Deployment.js';
 import { Logs } from './Component/Logs/Logs.js';
 
-
-
-
 function App() {
   const [auth ,setauth]=useState(null); 
   const [user ,setuser]=useState(null); 
