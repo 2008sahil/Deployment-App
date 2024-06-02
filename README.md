@@ -1,8 +1,5 @@
 
 
-
-
-
 # Vercel-like Deployment App
 
 Welcome to Vercel-Like Deployment App ! This is a web application built using the MERN stack that allows users to deploy their projects similar to Vercel. Users can add their public repositories and create projects effortlessly through the user-friendly interface.
