@@ -7,21 +7,27 @@ const Redis = require('ioredis')
 
 
 
-const publisher = new Redis('redis://default:AVNS_kh_5YK7aZgwHEwlMqFX@redis-1f810bc2-vercelclone.a.aivencloud.com:25619')
-
-const connectionString = 'DefaultEndpointsProtocol=https;AccountName=buildvercel;AccountKey=Rs17/Oknn0hbf8R4+AmSknLqRBoC91bBnyNDxj6R7ZnkB2bwX7w5CxMib50mMAibbtnFtl6ATb2n+ASt/tHHlw==;EndpointSuffix=core.windows.net'; // Replace with your Azure Blob Storage connection string
 const containerName = 'app-builds'; // Replace with your Azure Blob Storage container name
 
 const PROJECT_ID = process.env.PROJECT_ID
 const DeploymentId = process.env.DeploymentId
+const REDIS_URL = process.env.REDIS_URL;
+const AZURE_STORAGE_CONNECTION_STRING = process.env.AZURE_STORAGE_CONNECTION_STRING;
+const AZURE_BLOB_CONTAINER = process.env.AZURE_BLOB_CONTAINER;
 
+
+if (!REDIS_URL || !AZURE_STORAGE_CONNECTION_STRING || !AZURE_BLOB_CONTAINER || !PROJECT_ID || !DEPLOYMENT_ID) {
+    console.error("Missing environment variables. Check your .env file.");
+    process.exit(1);
+}
+const publisher = new Redis(REDIS_URL)
 
 function publishLog(log) {
     publisher.publish(`logs:${DeploymentId}`, JSON.stringify({ log }))
 }
 
-const blobServiceClient = BlobServiceClient.fromConnectionString(connectionString);
-const containerClient = blobServiceClient.getContainerClient(containerName);
+const blobServiceClient = BlobServiceClient.fromConnectionString(AZURE_STORAGE_CONNECTION_STRING);
+const containerClient = blobServiceClient.getContainerClient(AZURE_BLOB_CONTAINER);
 
 
 

@@ -4,7 +4,7 @@ const { exec } = require('child_process');
 const fs = require('fs');
 const deployment=require("../models/DeploymentSchema")
 router.post('/create-deployemnt',async (req, res) => {
-  console.log("request aai")
+  // console.log("request aai")
     const Deployment=await deployment.create({
         projectId:req.body.projectId,
         status:"Queued",
@@ -13,13 +13,13 @@ router.post('/create-deployemnt',async (req, res) => {
     const variable1=deploy.projectId.repositoryUrl;
     const variable2=deploy.projectId.ProjectId;
     const variable3=(Deployment._id);
-    console.log(variable1,variable2,variable3)
+    // console.log(variable1,variable2,variable3)
 
 
-    
+
     // console.log(project)
     // res.send(project);
-  
+
     // const { variable1, variable2 } = req.body;
 
     const yamlTemplate = `

@@ -11,11 +11,11 @@ import { Deployment } from './Component/Deployment/Deployment.js';
 import { Logs } from './Component/Logs/Logs.js';
 
 function App() {
-  const [auth ,setauth]=useState(null); 
-  const [user ,setuser]=useState(null); 
-  const Client_ID="1358438808b90040cd6f";
+  const [auth ,setauth]=useState(null);
+  const [user ,setuser]=useState(null);
+  const Client_ID=process.env.REACT_APP_CLIENT_ID;
 
-  
+
 
   useEffect(()=>{
     const queryString =window.location.search;

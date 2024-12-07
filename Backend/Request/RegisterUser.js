@@ -4,8 +4,8 @@ const User =require("../models/Userschema")
 const Project=require("../models/ProjectSchema")
 const deployment=require("../models/DeploymentSchema")
 
-const Client_ID="1358438808b90040cd6f";
-const Client_Secret="0645acc3480c79f5e2c577e17044a93a4c137c08";
+const Client_ID=process.env.clientId;
+const Client_Secret=process.env.clientSecret;
 
 router.get('/getAccessToken',async (req,res)=>{
     console.log(req.query.code)
@@ -29,7 +29,7 @@ router.get('/getAccessToken',async (req,res)=>{
 
 router.get('/userdata', async (req,res)=>{
     // console.log(req.headers.authorization)
-    
+
     await fetch("https://api.github.com/user",{
         method:"GET",
         headers:{

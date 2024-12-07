@@ -16,7 +16,7 @@ app.use(cors())
 connectDB()
 // redis server Config
 const Redis = require("ioredis");
-const redisUri = "redis://default:AVNS_kh_5YK7aZgwHEwlMqFX@redis-1f810bc2-vercelclone.a.aivencloud.com:25619"
+const redisUri = process.env.redisUri
 const subscriber = new Redis(redisUri);
 
 app.use('/Project',createproject)
